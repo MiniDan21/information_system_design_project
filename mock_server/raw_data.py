@@ -5,7 +5,7 @@ countries = [
         "population": 146599183,
         "area": 17098242,
         "languages": ["Russian"],
-        "gdp": 1685000000,
+        "gdp": 1685,
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@ countries = [
         "population": 38005238,
         "area": 9984670,
         "languages": ["English", "French"],
-        "gdp": 1848000000,
+        "gdp": 1848,
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@ countries = [
         "population": 1411778724,
         "area": 9596961,
         "languages": ["Mandarin"],
-        "gdp": 14722700000,
+        "gdp": 147227,
     },
     {
         "id": 4,
@@ -29,7 +29,7 @@ countries = [
         "population": 1380004385,
         "area": 3287263,
         "languages": ["Hindi", "English"],
-        "gdp": 2875140000,
+        "gdp": 287514,
     },
     {
         "id": 5,
@@ -37,7 +37,7 @@ countries = [
         "population": 331002651,
         "area": 9372610,
         "languages": ["English"],
-        "gdp": 21137500000,
+        "gdp": 211375,
     },
     {
         "id": 6,
@@ -45,7 +45,7 @@ countries = [
         "population": 212559417,
         "area": 8515767,
         "languages": ["Portuguese"],
-        "gdp": 2013000000,
+        "gdp": 2013,
     },
     {
         "id": 7,
@@ -53,7 +53,7 @@ countries = [
         "population": 25499884,
         "area": 7692024,
         "languages": ["English"],
-        "gdp": 1392000000,
+        "gdp": 13920,
     },
     {
         "id": 8,
@@ -61,7 +61,7 @@ countries = [
         "population": 83783942,
         "area": 357022,
         "languages": ["German"],
-        "gdp": 3845630000,
+        "gdp": 384563,
     },
     {
         "id": 9,
@@ -69,7 +69,7 @@ countries = [
         "population": 65273511,
         "area": 551695,
         "languages": ["French"],
-        "gdp": 2715510000,
+        "gdp": 271551,
     },
     {
         "id": 10,
@@ -77,6 +77,6 @@ countries = [
         "population": 59308690,
         "area": 1219090,
         "languages": ["Afrikaans", "English", "Zulu", "Xhosa"],
-        "gdp": 351500000,
+        "gdp": 35150,
     },
 ]

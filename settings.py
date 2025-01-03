@@ -6,7 +6,7 @@ class Settings(BaseSettings):
     MAIN_PORT: int
     SECONDARY_HOST: str
     SECONDARY_PORT: int
-    CORS_ALLOWED_IP: str
+    DEBUG: bool = True
 
     @property
     def secondary_addr(self):

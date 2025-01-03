@@ -25,20 +25,22 @@ from .raw_data import countries
 def db_get_countries():
     return [Countries(**c) for c in countries]
 
+
 def db_get_country_by_id(id: int):
-    return [Countries(**c) for c in countries if c['id'] == id]
+    return [Countries(**c) for c in countries if c["id"] == id]
+
 
 class Countries(service_pb2_grpc.CountriesServicer):
     async def GetCountry(
-        self, 
-        request: service_pb2.GetCountryRequest, 
+        self,
+        request: service_pb2.GetCountryRequest,
         context: grpc.aio.ServicerContext,
     ) -> service_pb2.GetCountryResponse:
         return service_pb2.Country(message=db_get_countries())
-    
+
     async def GetCountryByID(
-        self, 
-        request: service_pb2.GetCountryByIDRequest, 
+        self,
+        request: service_pb2.GetCountryByIDRequest,
         context: grpc.aio.ServicerContext,
     ) -> service_pb2.GetCountryByIDResponse:
         return service_pb2.Country(message=db_get_country_by_id(request.id))

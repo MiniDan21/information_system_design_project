@@ -1,7 +1,13 @@
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from typing import (
+    ClassVar as _ClassVar,
+    Iterable as _Iterable,
+    Mapping as _Mapping,
+    Optional as _Optional,
+    Union as _Union,
+)
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -19,7 +25,15 @@ class Country(_message.Message):
     area: int
     languages: _containers.RepeatedScalarFieldContainer[str]
     gdp: int
-    def __init__(self, id: _Optional[int] = ..., country_name: _Optional[str] = ..., population: _Optional[int] = ..., area: _Optional[int] = ..., languages: _Optional[_Iterable[str]] = ..., gdp: _Optional[int] = ...) -> None: ...
+    def __init__(
+        self,
+        id: _Optional[int] = ...,
+        country_name: _Optional[str] = ...,
+        population: _Optional[int] = ...,
+        area: _Optional[int] = ...,
+        languages: _Optional[_Iterable[str]] = ...,
+        gdp: _Optional[int] = ...,
+    ) -> None: ...
 
 class GetCountryRequest(_message.Message):
     __slots__ = ()
@@ -29,7 +43,9 @@ class GetCountryResponse(_message.Message):
     __slots__ = ("country",)
     COUNTRY_FIELD_NUMBER: _ClassVar[int]
     country: _containers.RepeatedCompositeFieldContainer[Country]
-    def __init__(self, country: _Optional[_Iterable[_Union[Country, _Mapping]]] = ...) -> None: ...
+    def __init__(
+        self, country: _Optional[_Iterable[_Union[Country, _Mapping]]] = ...
+    ) -> None: ...
 
 class GetCountryByIDRequest(_message.Message):
     __slots__ = ("id",)

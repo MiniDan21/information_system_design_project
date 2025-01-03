@@ -11,9 +11,10 @@ class Settings(BaseSettings):
     @property
     def secondary_addr(self):
         return self.SECONDARY_HOST + ":" + str(self.SECONDARY_PORT)
-    
+
     class Config:
-        env_file = '.env'
-        env_file_encoding = 'utf-8'
+        env_file = ".env"
+        env_file_encoding = "utf-8"
+
 
 settings = Settings()

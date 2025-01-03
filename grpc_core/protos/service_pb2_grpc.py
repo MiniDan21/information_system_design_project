@@ -5,23 +5,26 @@ import warnings
 
 from . import service_pb2 as service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = "1.68.1"
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
 try:
     from grpc._utilities import first_version_is_lower
-    _version_not_supported = first_version_is_lower(GRPC_VERSION, GRPC_GENERATED_VERSION)
+
+    _version_not_supported = first_version_is_lower(
+        GRPC_VERSION, GRPC_GENERATED_VERSION
+    )
 except ImportError:
     _version_not_supported = True
 
 if _version_not_supported:
     raise RuntimeError(
-        f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in service_pb2_grpc.py depends on'
-        + f' grpcio>={GRPC_GENERATED_VERSION}.'
-        + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
-        + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
+        f"The grpc package installed is at version {GRPC_VERSION},"
+        + f" but the generated code in service_pb2_grpc.py depends on"
+        + f" grpcio>={GRPC_GENERATED_VERSION}."
+        + f" Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}"
+        + f" or downgrade your generated code using grpcio-tools<={GRPC_VERSION}."
     )
 
 
@@ -35,15 +38,17 @@ class CountriesStub(object):
             channel: A grpc.Channel.
         """
         self.GetCountry = channel.unary_unary(
-                '/country.Countries/GetCountry',
-                request_serializer=service__pb2.GetCountryRequest.SerializeToString,
-                response_deserializer=service__pb2.GetCountryResponse.FromString,
-                _registered_method=True)
+            "/country.Countries/GetCountry",
+            request_serializer=service__pb2.GetCountryRequest.SerializeToString,
+            response_deserializer=service__pb2.GetCountryResponse.FromString,
+            _registered_method=True,
+        )
         self.GetCountryByID = channel.unary_unary(
-                '/country.Countries/GetCountryByID',
-                request_serializer=service__pb2.GetCountryByIDRequest.SerializeToString,
-                response_deserializer=service__pb2.GetCountryByIDResponse.FromString,
-                _registered_method=True)
+            "/country.Countries/GetCountryByID",
+            request_serializer=service__pb2.GetCountryByIDRequest.SerializeToString,
+            response_deserializer=service__pb2.GetCountryByIDResponse.FromString,
+            _registered_method=True,
+        )
 
 
 class CountriesServicer(object):
@@ -52,54 +57,57 @@ class CountriesServicer(object):
     def GetCountry(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
     def GetCountryByID(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
 
 def add_CountriesServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'GetCountry': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetCountry,
-                    request_deserializer=service__pb2.GetCountryRequest.FromString,
-                    response_serializer=service__pb2.GetCountryResponse.SerializeToString,
-            ),
-            'GetCountryByID': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetCountryByID,
-                    request_deserializer=service__pb2.GetCountryByIDRequest.FromString,
-                    response_serializer=service__pb2.GetCountryByIDResponse.SerializeToString,
-            ),
+        "GetCountry": grpc.unary_unary_rpc_method_handler(
+            servicer.GetCountry,
+            request_deserializer=service__pb2.GetCountryRequest.FromString,
+            response_serializer=service__pb2.GetCountryResponse.SerializeToString,
+        ),
+        "GetCountryByID": grpc.unary_unary_rpc_method_handler(
+            servicer.GetCountryByID,
+            request_deserializer=service__pb2.GetCountryByIDRequest.FromString,
+            response_serializer=service__pb2.GetCountryByIDResponse.SerializeToString,
+        ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'country.Countries', rpc_method_handlers)
+        "country.Countries", rpc_method_handlers
+    )
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('country.Countries', rpc_method_handlers)
+    server.add_registered_method_handlers("country.Countries", rpc_method_handlers)
 
 
- # This class is part of an EXPERIMENTAL API.
+# This class is part of an EXPERIMENTAL API.
 class Countries(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def GetCountry(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
+    def GetCountry(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/country.Countries/GetCountry',
+            "/country.Countries/GetCountry",
             service__pb2.GetCountryRequest.SerializeToString,
             service__pb2.GetCountryResponse.FromString,
             options,
@@ -110,23 +118,26 @@ class Countries(object):
             wait_for_ready,
             timeout,
             metadata,
-            _registered_method=True)
+            _registered_method=True,
+        )
 
     @staticmethod
-    def GetCountryByID(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
+    def GetCountryByID(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/country.Countries/GetCountryByID',
+            "/country.Countries/GetCountryByID",
             service__pb2.GetCountryByIDRequest.SerializeToString,
             service__pb2.GetCountryByIDResponse.FromString,
             options,
@@ -137,4 +148,5 @@ class Countries(object):
             wait_for_ready,
             timeout,
             metadata,
-            _registered_method=True)
+            _registered_method=True,
+        )

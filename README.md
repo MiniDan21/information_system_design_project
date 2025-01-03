@@ -26,11 +26,16 @@ cp .env.example .env
 ```
 
 4. Starting demo
-```
+```bash
 ./tools/start.sh
 ```
 
 5. Testing
-```
+```bash
 ./tools/tests
+```
+
+6. If you change code, then use linting
+```bash
+./tools/linting.sh
 ```

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package country;
+
+message Country {
+  int32 id = 1; 
+  string country_name = 2;
+  int32 population = 3;
+  int32 area = 4;
+  repeated string languages = 5;
+  optional int32 gdp = 6;
+}
+
+message GetCountryRequest {}
+
+message GetCountryResponse {
+  repeated Country country = 1;
+}
+
+message GetCountryByIDRequest {
+  int32 id = 1;
+}
+
+message GetCountryByIDResponse {
+  optional Country country = 1;
+}
+
+service Countries {
+  rpc GetCountry (GetCountryRequest) returns (GetCountryResponse);
+  rpc GetCountryByID (GetCountryByIDRequest) returns (GetCountryByIDResponse);
+}

@@ -32,7 +32,7 @@ cp .env.example .env
 
 5. Testing
 ```bash
-./tools/tests
+./tools/tests.sh
 ```
 
 6. If you change code, then use linting
